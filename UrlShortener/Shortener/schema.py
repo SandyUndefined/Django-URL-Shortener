@@ -10,15 +10,16 @@ class URLType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
-    urls = graphene.List(URLType,url=graphene.String())
+    urls = graphene.List(URLType,url=graphene.String(),items=graphene.Int())
 
-    def resolve_urls(self,info,url=None,**kwargs):
+    def resolve_urls(self,info,url=None,items=None,**kwargs):
         queryset = URL.objects.all()
 
         if url:
             _filter = Q(full_url__icontains=url)
             queryset = queryset.filter(_filter)
-
+        if items:
+            queryset = queryset[:items]
         return queryset
 
 
