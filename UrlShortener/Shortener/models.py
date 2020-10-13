@@ -17,7 +17,7 @@ class URL(models.Model):
 
     def save(self,*args,**kwargs):
         if not self.id:
-            self.url_hash = md5(self.full_url.encode()).hexdigest()[:10]
+            self.url_hash = md5(self.full_url.encode()).hexdigest()[:4]
         validate = URLValidator()
         try:
             validate(self.full_url)
