@@ -6,7 +6,7 @@ URL-Shortener: _Long URL short into 4 AlphaNumeric values_
 # Features to be Added
 - [ ] Delete Mutation
 - [ ] User Input(How long Url will be)
-- [ ] UI for users.
+- [ ] Add front end with react and other stacks also.
 
 # How to Run
 Open cmd prompt and write following commands.
