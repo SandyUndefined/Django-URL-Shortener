@@ -4,9 +4,8 @@ URL-Shortener: _Long URL short into 4 AlphaNumeric values_
 **This project is Incomplete for now.**
 
 # Features to be Added
-- [ ] Delete Mutation
-- [ ] User Input(How long Url will be)
-- [ ] Add front end with react and other stacks also.
+- [ ] Add a React as frontend.
+- [X] Delete Mutation.
 
 # How to Run
 Open cmd prompt and write following commands.
@@ -42,6 +41,18 @@ mutation {
       clicks
       createdAt
     }
+  }
+}
+```
+
+**Delete (Mutation):**
+
+Place your URL in 'Your URL' and after that click on **Play Button**
+```
+mutation {
+  deleteUrl(id:"Your URL's ID") {
+    id
+    url
   }
 }
 ```

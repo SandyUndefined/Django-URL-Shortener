@@ -35,6 +35,19 @@ class CreateURL(graphene.Mutation):
 
         return CreateURL(url=url)
 
+class DeleteUrl(graphene.Mutation):
+    # Return Values
+    id = graphene.Int()
+    url = graphene.String()
+
+    class Arguments:
+        id = graphene.ID()
+
+    def mutate(self,info,id):
+        obj = URL.objects.get(id=id)
+        obj.delete()
+        return DeleteUrl(id=id,url=obj.full_url)
 
 class Mutation(graphene.ObjectType):
     create_url = CreateURL.Field()
+    delete_url = DeleteUrl.Field()

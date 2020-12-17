@@ -9,5 +9,4 @@ class Query(Shortener.schema.Query,graphene.ObjectType):
 class Mutation(Shortener.schema.Mutation, graphene.ObjectType):
     pass
 
-
 schema = graphene.Schema(query=Query,mutation=Mutation)
